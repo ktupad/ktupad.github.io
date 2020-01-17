@@ -162,34 +162,3 @@ pre span { white-space: pre-wrap;}
 
 a { text-decoration: none; }
 
-.cloudSize1  { font-size: 12px; color: red; }
-.cloudSize2  { font-size: 14px; color: orange; }
-.cloudSize3  { font-size: 16px; color: #FFCC00; }
-.cloudSize4  { font-size: 18px; color: green; }
-.cloudSize5  { font-size: 20px; color: blue; }
-.cloudSize6  { font-size: 22px; color: pink; }
-.cloudSize7  { font-size: 24px; color: purple; }
-.cloudSize8  { font-size: 26px; color: brown; }
-.cloudSize9  { font-size: 28px; color: gray; }
-.cloudSize10 { font-size: 30px; color: black; }
-
-
-.disabled {
-   pointer-events: none;
-   cursor: default;
-   /* opacity: .8; */
-   background-color: #eee;
-}
-
-.ico:after{
-    content: '';
-    display: block;
-    height: 20px;  /*height of icon */
-    width: 20px;  /*width of icon */
-
-      /*where to replace the icon */
-
-      /*background */
-    background: red url(images/dl.svg) no-repeat 0px 0px;
-
-}
