@@ -52,18 +52,6 @@ body { padding-top:50px; background-color: #355664; color: #fff;     margin: 0;
 img {width: 100%; height: auto;}
 .img { max-width: 450px; }
 
-.table table { border-collapse:collapse; border-spacing:0; width:100%; color: #000;}
-.table tr { background:#f8f8f8; }
-.table tr:nth-child(even){ background:#f2f2f2 }
-.table th {background:#072d3a; height:37px; }
-.table th,.table td { vertical-align: top;  text-align: left; border:none; padding:8px; }
-
-/* .dtable {display:table;}
-.drow {display:table-row; }
-.dcell{display:table-cell; border:1px solid #333; padding:5px;} */
-
-/* .table div { border: 1px solid #ddd;} */
-.table .header { background-color: #333; color: #fff;}
 
  
 
