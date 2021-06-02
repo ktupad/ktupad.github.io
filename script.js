@@ -8,10 +8,10 @@ conf.loadScript([
 // 'web/web.js'
 ], function() {});
 
-conf.loadCSS('addon/svg/svg.css');
-conf.loadCSS('addon/aurora/aurora.css');
-// conf.loadCSS('addon/leaflet/leaflet.css');
-// conf.loadCSS('web.css');
+conf.loadcss('addon/svg/svg.css');
+conf.loadcss('addon/aurora/aurora.css');
+// conf.loadcss('addon/leaflet/leaflet.css');
+// conf.loadcss('web.css');
 
 arr={
 'Red':{pColor:'#b71c1c',pLightColor:'#f05545',pDarkColor:'#7f0000',pTextColor:'#ffffff'},

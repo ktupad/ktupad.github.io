@@ -1037,7 +1037,7 @@ document.getElementById('content').innerHTML=out;
 
 appUpdate:function(){
 window.localStorage.removeItem('appData');
-conf.getAppData();
+conf.getappdata();
 },
 
 

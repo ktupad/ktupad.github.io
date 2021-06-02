@@ -12,7 +12,7 @@ dataUser:{name:'sa',akses:['c','r','u','d'],token:'fa723e8241927aeedd76960c2234d
 dataApp:{ data:[],host:'http://localhost/',model:'system/database.php',path:'system/model.php'},
 periode:'2021-01-01 s/d 2021-12-31',
 
-getAppData:function(){
+getappdata:function(){
   var data=window.localStorage.getItem('appData');
   if(!data){
     datas={token:'1258',mod:'app',cond:''};
@@ -140,7 +140,7 @@ http.send(JSON.stringify(data));
 loadView:function(html){  debug('conf.loadView');
 },
 
-getCSS:function(file, i){  debug('conf.loadCSS');
+getCSS:function(file, i){  debug('conf.loadcss');
 var oldlink = document.getElementsByTagName("link").item(i);
 var newlink = document.createElement("link");
 newlink.setAttribute("rel", "stylesheet");
@@ -202,7 +202,7 @@ document.head.appendChild(s);
 }
 },
 
-loadCSS:function(file) { debug('conf.loadCSS');
+loadcss:function(file) { debug('conf.loadcss');
 
 var head  = document.getElementsByTagName('head')[0];
 var link  = document.createElement('link');

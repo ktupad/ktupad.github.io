@@ -4,5 +4,5 @@ conf.dataApp.model='https://sismadi.co.id/api/';
 conf.isSignup='hide';
 conf.isDb=1;
 conf.akses=['c','r','u','d'];
-conf.getAppData();
+conf.getappdata();
 // conf.open('atas');
