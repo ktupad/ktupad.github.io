@@ -11,7 +11,7 @@ getappdata=function(){
   var data=window.localStorage.getItem('appData');
   if(!data){
     datas={token:'1258',mod:'app',cond:''};
-    datas.host=this.dataApp.host;
+    datas.host='https://ktupad.github.io/';
      conf.loadModel(datas,function(res){
      json=JSON.parse(res);
      debug(json);
