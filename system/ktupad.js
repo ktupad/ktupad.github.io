@@ -110,7 +110,7 @@ callback(obj);
 
 });
 },
-
+ 
 
 loadModel:function(data,callback){  debug('conf.loadModel');
 var http = new XMLHttpRequest();
