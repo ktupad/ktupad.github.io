@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="Description" content="Ktupad MVC Framework by wawan sismadi">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<meta http-equiv="Cache-Control" content="public" max-age="31536000">
+<!-- <meta http-equiv="Cache-Control" content="max-age=1209600"> -->
+<!-- Cache-Control: max-age=31536000 -->
+<link rel="preload" href="addon/svg/svg.css" as="style">
+<link rel="preload" href="addon/aurora/aurora.css" as="style">
+
+<link rel="shortcut icon" href="system/favicon.ico">
+<link rel="stylesheet" type="text/css" href="system/ktupad.css" async>
+<link rel="stylesheet" type="text/css" href="style.css" async>
+<!-- <link rel="stylesheet" type="text/css" href="svg/svg.css" async> -->
+<!-- <link rel="stylesheet" type="text/css" href="aurora/aurora.css"/> -->
+
+<link rel="manifest" href="pwa/manifest.json">
+
+<!-- Add to home screen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Tereos ID Barcode">
+<link rel="apple-touch-icon" href="pwa/icons/icon-152x152.png">
+
+<!-- Windows related -->
+<meta name="msapplication-TileImage" content="pwa/icons/icon-144x144.png">
+<meta name="msapplication-TileColor" content="#386CC1">
+<meta name="theme-color" content="#164391">
+
+<title>Ktupad</title>
+
+<script src="pwa/register-worker.js"></script>
+
+</head>
+<body>
+<!-- <div class="aurora-bg aurora-outer"><div class="aurora-inner"></div></div> -->
+<!-- <div class="auroral-stars"></div> -->
+
+<div id="modal" class="depan hide"></div>
+<div id="modal2" class="depan hide"></div>
+
+<div id="printarea" class="cetak hide"></div>
+<div id="depan" class="hide"></div>
+<main id="main" class="row main">
+<div id="atas" class="pDarkColor hide navbar">
+<ul>
+<li style="float:left" class="accordion-menu" tabindex="0" >
+<i class="btn-form svgIco" id="btnMenu"></i>
+<ul id="kiri" class="accordion pColor" >
+  <li><input type="checkbox" id="1s" > <label class="btn-h" for="1s" >Info</label><ul>
+  <li><input type="checkbox" id="2s" > <label class="btn-h" for="2s" >Ktupad-2.0</label></li></ul>
+</li>
+</ul>
+</li>
+<li style="float:right">
+</li>
+<li style="float:left" id="li-kiri"   aria-hidden="true"></li>
+<li style="float:right" id="li-kanan"  aria-hidden="true">
+<i class="ico-envelope"></i>
+<span id="badge" class="badge" data-badge="0"></span></li>
+</ul>
+</div>
+<div id="bar" class="row pColor"></div>
+<div id="content" class="row content"></div>
+<div id="bawah" class="pDarkColor toast hide"></div>
+</main>
+
+<script type="text/javascript" src="addon/qrious.min.js"></script>
+<script type="text/javascript" src="system/ktupad.js"></script>
+<script type="text/javascript" src="system/controller.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
