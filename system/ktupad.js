@@ -1789,3 +1789,4 @@ k[x].button.form();
 // end ktupad
 path=conf.getURL('path');
 if(path){conf.loadController(path);}
+
