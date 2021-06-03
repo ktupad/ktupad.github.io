@@ -2,9 +2,9 @@
 
 require 'phpmailer/PHPMailerAutoload.php';
 // $enc = "register@sismadi.com";
-$email = "register@sismadi.com";
-$password = "hamas@16";
-$to_id = "m@dia.web.id";
+$email = "emailmu";
+$password = "sandimu";
+$to_id = "emailkepada";
 // $message = "Aktifkan akun ada dengan klik halaman berikut <a href='https://sikaf.aset.co/?menu=aktifasi&id=$enc' > aktifasi </a>";
   $message = "Aktifkan akun ada dengan klik halaman berikut <a href='http://localhost/lite/?c=pengguna/verifikasi/$enc' > aktifasi </a>";
 $subject = "Pendafatran Akun Kuttab Al Fatih";
