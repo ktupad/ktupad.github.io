@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Ktupad</title>
+<link rel="stylesheet" type="text/css" href="chart.css" async>
+<link rel="stylesheet" href="../../system/ktupad.css">
+
+</head>
+<body>
+  <div class="l-6 s-12"><div  id="pie" class="img"></div></div>
+  <div class="l-6 s-12"><div  id="bar" class="img"></div></div>
+<script type="text/javascript" src="chart.js"></script>
+<script>
+
+arr=[
+{nama:"blue",isi:20},
+{nama:"green",isi:120},
+{nama:"gold",isi:200},
+{nama:"purple",isi:80},
+{nama:"red",isi:20}
+];
+
+out=pie(arr);
+document.getElementById('pie').innerHTML=out;
+out=bar(arr);
+document.getElementById('bar').innerHTML=out;
+</script>
+</body>
+</html>

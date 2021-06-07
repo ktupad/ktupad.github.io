@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Ktupad</title>
+<link rel="stylesheet" type="text/css" href="svg.css" async>
+</head>
+<body>
+
+
+<div id="svg"></div>
+<div id="svgImg"></div>
+<script type="text/javascript" src="svg.js"></script>
+<script>
+
+arr=['donasi','home','printer','close','camera','plus','menu','lokasi',
+'target','pesan','map','kontak','calendar','laporan','akses',
+'param','minus','image','like','favorite','search','bag','score',
+'exam','pined','blog','barang','tool','share',
+'distribusi','label','simpan','proses','troli','code',
+'view','bucket','cloud','cart','ktupad','diagram',
+'clock','hp','map','camera2','parking','cashier','shipping',
+'ticket','exam2','medal',
+'facebook','instagram','linkedin','twitter','whatsapp','youtube',
+'qrcode','blog','performance','responsive',
+'userend','useradmin','usermanager','userdev','login',
+];
+out='';
+for(i in arr){a=arr[i];
+  out+='<div class="container">';
+  out+='<i class="svgIco">'+svg(a)+'</i>';
+  out+='<br>'+a+'</div>';
+}
+document.getElementById('svg').innerHTML=out;
+
+// out='<i class="svgImg">'+svg('home')+'</i>';
+// document.getElementById('svgImg').innerHTML=out;
+
+</script>
+</body>
+</html>

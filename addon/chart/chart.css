@@ -1,0 +1,30 @@
+h1 {font: 24px sans-serif;}
+.chart-bar {fill: #d81c3f;}
+.chart-bar:hover {fill: darkgray;}
+.chart-bar-axis {font: 10px sans-serif;}
+.chart-bar-axis path,.chart-bar-axis line {fill: none;stroke: #000;shape-rendering: crispEdges;}
+.chart-bar-x.axis path {display: none;}
+.img{ width:100%; height: auto;}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.chart-pie-text { fill: #000;
+  transform: translateY(0.25em);
+}
+
+.chart-pie-number {
+  font-size: 0.5em;
+  line-height: 1;
+  text-anchor: middle;
+  transform: translateY(-0.25em);
+}
+
+.chart-pie-label {
+  font-size: 0.2em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  transform: translateY(0.7em);
+}
