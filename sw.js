@@ -9,11 +9,26 @@ const RESOURCES_TO_PRELOAD = [
 	'pwa/manifest.json',
 	'system/ktupad.css',
 	'system/ktupad.js',
-	'system/controller.js',
-	'system/view.js',
 	'system/favicon.ico',
-	'addon/svg/svg.js',
-	'addon/svg/svg.css'
+	'svg/svg.js',
+	'svg/svg.css',
+	'modules/master/home/controller.js',
+	'modules/master/login/controller.js',
+	'modules/stok/home/controller.js',
+	'modules/stok/barang/controller.js',
+	'modules/stok/lokasi/controller.js',
+	'modules/stok/distribusi/controller.js',
+	'modules/stok/laporan/controller.js',
+	'modules/pos/home/controller.js',
+	'modules/pos/kontak/controller.js',
+	'modules/pos/transaksi/controller.js',
+	'modules/pos/laporan/controller.js',
+	'modules/akuntansi/home/controller.js',
+	'modules/akuntansi/akun/controller.js',
+	'modules/akuntansi/persamaan/controller.js',
+	'modules/akuntansi/jurnal/controller.js',
+	'modules/akuntansi/tagihan/controller.js',
+	'modules/akuntansi/laporan/controller.js'
 	//'offline-404.html'
 ];
 

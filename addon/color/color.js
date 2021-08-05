@@ -1,6 +1,5 @@
-x='color';
-k[x]={
-  arr:[
+color={
+arr:[
   {name:'Red',pColor:'#b71c1c',pLightColor:'#f05545',pDarkColor:'#7f0000',pTextColor:'#ffffff'},
   {name:'Pink',pColor:'#880e4f',pLightColor:'#bc477b',pDarkColor:'#560027',pTextColor:'#ffffff'},
   {name:'Purple',pColor:'#4a148c',pLightColor:'#7c43bd',pDarkColor:'#12005e',pTextColor:'#ffffff'},
@@ -21,8 +20,12 @@ k[x]={
   {name:'Grey',pColor:'#212121',pLightColor:'#484848',pDarkColor:'#000000',pTextColor:'#ffffff'},
   {name:'Blue Grey',pColor:'#263238',pLightColor:'#4f5b62',pDarkColor:'#000a12',pTextColor:'#ffffff'},
 ],
-  view:function(){
-arr=this.arr;
+set:function(id){
+window.localStorage.setItem('color-bg', id);
+color.view1();
+},
+view:function(){
+  arr=this.arr;
   out='';
   for(i in arr){a=arr[i];
   out+='<div class="row center">';
@@ -31,23 +34,20 @@ arr=this.arr;
   out+='<div class="l-2 s-4 center" style="background:'+a.pLightColor+'" > '+a.pLightColor+' </div>';
   out+='<div class="l-2 s-4 center" style="background:'+a.pDarkColor+'" > '+a.pDarkColor+' </div>';
   out+='<div class="l-2 s-4 center" > '+a.pTextColor+' </div>';
-  out+='<div class="l-2 s-4 center" > View </div>';
+  out+='<div class="l-2 s-4 center" ><a href="#"  onclick="color.set(\''+a.name+'\')"> View </a></div>';
   out+='</div>';
+
   }
-  document.getElementById('color-spoiler').innerHTML=out;
-  // document.getElementById('content').innerHTML=out;
-  // alert(out);
-  // document.getElementById('modal2').innerHTML=out;
-  // conf.open('modal2');
-
-
+  ktupad.modal2(out);
+  // document.getElementById('color-spoiler').innerHTML=out;
   },
+view1:function(){
+  var bg=window.localStorage.getItem('color-bg');
+  if(!bg){bg='Blue'}
 
-  warna:function(nama,arr){ c=arr[nama];
-  for (i in c){ document.documentElement.style.setProperty('--'+i, c[i]);
-}},
-
-
-
-
+  arr=this.arr;
+  nah=arr.find(x => x.name === bg);
+  for (i in nah){ document.documentElement.style.setProperty('--'+i, nah[i]); }
+},
 };
+color.view1();

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+QRious
+Copyright (C) 2017 Alasdair Mercer
+Copyright (C) 2010 Tom Zerucha
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>BL QRCode</title>
+
+
+
+
+  <style>
+
+  br {
+   display: block;
+   margin: 0px 0;
+}
+
+  .float{
+  	position:fixed;
+  	width:60px;
+  	height:60px;
+  	bottom:40px;
+  	right:40px;
+  	background-color:#355664;
+  	color:#FFF;
+  	border-radius:50px;
+  	text-align:center;
+  	box-shadow: 2px 2px 3px #999;
+  }
+
+  .my-float{
+  	margin-top:22px;
+  }
+
+
+
+
+  @media print { margin: 0cm !important;
+  
+    br {
+   display: block;
+   margin: 0px 0;
+}
+
+
+  body{margin:0;}
+  #main{ display:none; }
+  #printarea{ display:inline-block; position: absolute; top: 0px; left: 0px; width:100%;}
+  .colnama { font-size: 6px;
+  }
+  .cetak { overflow: auto; width:100%;
+    outline: 1px dotted;
+  }
+  .cetak table {  width:100%; background:#000;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    outline: 1px dotted;
+   }
+  .cetak tr { height: 0.73in;}
+  .cetak th {background:#072d3a; height:auto; }
+  .cetak th,.cetak td { border:none; text-align:left; padding:0; }
+  .cetak td.tar{text-align: right;}
+  .cetak td.tac{text-align: center;}
+
+
+
+  }
+
+  </style>
+
+
+
+</head>
+<body>
+
+  <a onclick="PrintElem()" href="#" class="float">
+  <div class="my-float">Print</div>
+  </a>
+
+  <script>
+  function PrintElem() {
+      window.print();
+      return true;
+  }
+  </script>
+
+
+  <div id="printarea"></div>
+
+
+<script src="qrious.min.js"></script>
+<script>
+
+
+
+var cetak=function(){
+
+    var data=[
+      {kode:'bl-10000/XI/2019',nama:'satu'},
+      {kode:'bl-10001/XI/2019',nama:'empat'}
+    ];
+
+    var data=JSON.parse(window.localStorage.getItem('data3'));
+
+
+    out  = '<div class="cetak"><table>';
+    for (key in data) { col=data[key];
+	
+	var myarr = col.kontak.split("-");
+	
+    out += '<tr>';
+    out += '<td class="tac"><img id="img'+col.kode+'" ><br>'+col.kode+'<br>'+myarr[0];
+    // out += '<td class="tac"><img id="img1'+col.kode+'" ><br>'+col.kode+'<br>'+col.keterangan;
+    out += '</td>';
+    out += '</tr>';
+    }
+    out += '</table></div>';
+
+    // document.getElementById('printarea').innerHTML=out;
+
+    // out += '<a onclick="k.transaksi.app.PrintElem()" href="#" class="float">';
+    // out += '<div class="my-float">Print</div>';
+    // out += '</a>';
+
+
+
+    // k[x].modal.data=out;
+    // k[x].modal.view();
+
+    document.getElementById('printarea').innerHTML=out;
+
+
+    for(key in data){ col=data[key];
+     // var qr = new QRious({ element: document.getElementById('img'+col.kode),level:'L',value: col.kode, size: 62 } );
+      var qr = new QRious({ element: document.getElementById('img'+col.kode),level:'L',value: col.kode } );
+      // var qr1 = new QRious({ element: document.getElementById('img1'+col.kode),level:'L',value: col.kode, size: 62 } );
+    }
+
+};
+
+
+cetak();
+
+</script>
+</body>
+</html>

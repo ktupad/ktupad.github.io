@@ -6,7 +6,7 @@ const canvasElement = document.getElementById(id);
 const canvas = canvasElement.getContext("2d");
 
 qrcode.callback=function(res){
-  var sound = new Audio("qrscan/barcode.wav");
+  var sound = new Audio("addon/qrscan/barcode.wav");
   if (res) {
   scanning = false;
   video.srcObject.getTracks().forEach(track => {

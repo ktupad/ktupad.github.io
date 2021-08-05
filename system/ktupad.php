@@ -10,10 +10,11 @@ $e = json_decode(file_get_contents('php://input'), true);
 $path='model.php';
 if(isset($e['path'])){$path=$e['path']; }
 else { $r=$_REQUEST; if(isset($r['path'])){ $path=$r['path']; } }
-$path='model.php';
+
 include($path);
 
 class ktupad extends koneksi {
+
 public $conf1=array(
 'baseURL' => 'http://localhost/',
 'isAkses'   => 0,
@@ -42,8 +43,7 @@ foreach ($r as $key=>$val) {
 // $this->$key=$val;
 // $this->datas[$key]=$val;
 $this->conf[$key]=$val;
-// $inj = array(" or'"," or ","drop");
-$inj = array();
+$inj = array(" or'"," or ");
 $str = $val;
 if (str_replace($inj, '', $str) != $str) {  $this->conf[$key]=''; }
 // else {  $this->conf[$key]=$val;}
@@ -56,8 +56,7 @@ if(isset($e)){ foreach ($e as $key=>$val) {
 // $this->$key=$val;
 // $this->datas[$key]=$val;
 $this->conf[$key]=$val;
-// $inj = array(" or'"," or ","drop");
-$inj = array();
+$inj = array(" or'"," or ");
 $str = $val;
 if (str_replace($inj, '', $str) != $str) {  $this->conf[$key]='ktupad'; }
 // else {  $this->conf[$key]=$val;}
@@ -180,17 +179,13 @@ echo "Sorry, file already exists.";
 $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["afile"]["size"] > 15000000) {
+if ($_FILES["afile"]["size"] > 500000) {
 echo "Sorry, your file is too large.";
 $uploadOk = 0;
 }
 // Allow certain file formats
-if($imageFileType != "jpg"
-&& $imageFileType != "png"
-&& $imageFileType != "jpeg"
-&& $imageFileType != "gif"
-&& $imageFileType != "mp4"
- ) {
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
 $uploadOk = 0;
 }
@@ -234,11 +229,11 @@ $col[] = $cols['name'];
 }
 while($row = $result->fetch()) { $data[] = $row; }
 }
-$sql='SQL';
+// $sql='SQL';
 $out=array('sql'=>$sql,'info'=>'Berhasil '.$act,'fld'=>$col,'data'=>$data,'akses'=>$tAkses );
 }
 else {
-$sql='SQL';
+// $sql='SQL';
 $out=array('sql'=>$sql,'info'=>'Gagal '.$act,'akses'=>$tAkses );}
 return $out;
 $conn=null;
@@ -266,24 +261,14 @@ return $data;
 public function create(){
   $d=$this->conf;
   $data=$d['data'];
-  // $induk=$d['induk'];
   foreach($data as $key => $val) { $obj[]=$key."='".$val."'"; }
   $row = implode(',',$obj);
-
-  if($d['isColumn']==0){ $sql="INSERT INTO $d[tb] SET $row";}
-  if($d['isColumn']==1){ $sql="ALTER TABLE $d[tableinduk] ADD COLUMN $data[Field] $data[Type] AFTER id;"; }
-  if($d['isColumn']==2){ $sql="CREATE TABLE $data[Tables_in_dev] ( id INT(11) AUTO_INCREMENT PRIMARY KEY);"; }
-
-
+  $sql="INSERT INTO $d[tb] SET $row";
   $out=$this->sql('c','Create',$sql);
   echo json_encode($out);
-
-  // echo json_encode($sql);
-
-
   }
   // end create
-public function read(){
+  public function read(){
   $d=$this->conf;
   $sql = "SELECT * FROM $d[tb] WHERE id=$d[id]";
   $out=$this->sql('r','Read',$sql);
@@ -292,74 +277,44 @@ public function read(){
   // end read
   public function update(){
   $d=$this->conf;
-
-
   $data=$d['data'];
   foreach($data as $key => $val) { $obj[]=$key."='".$val."'"; }
   $row = implode(',',$obj);
-
-
-  if($d['isColumn']==0){ $sql = "UPDATE $d[tb] SET $row WHERE id=$d[id]";}
-  if($d['isColumn']==1){ $sql="ALTER TABLE $d[tableinduk] CHANGE  COLUMN $d[induk] $data[Field] $data[Type] ";  }
-  if($d['isColumn']==2){ $sql="ALTER TABLE $d[induk] RENAME TO $data[Tables_in_dev]"; }
-
+  $sql = "UPDATE $d[tb] SET $row WHERE id=$d[id]";
   $out=$this->sql('u','Update',$sql);
   echo json_encode($out);
-
-  // echo json_encode($sql);
-
   }
   // end update
   public function delete(){
   $d=$this->conf;
-  if($d['isColumn']==0){ $sql="DELETE FROM $d[tb] WHERE id IN ($d[id])";}
-  if($d['isColumn']==1){ $sql="ALTER TABLE $d[tableinduk] DROP COLUMN $d[induk]";  }
-  if($d['isColumn']==2){ $sql="DROP TABLE $d[induk]"; }
-
+  $sql="DELETE FROM $d[tb] WHERE id IN ($d[id])";
   $out=$this->sql('d','Delete',$sql);
   echo json_encode($out);
-
-  // echo json_encode($sql);
-
   }
   // end delete
-
 public function table(){
 $d=$this->conf;
-    // $d['cond']=rawurldecode($d['cond']);
+// $d['cond']=rawurldecode($d['cond']);
 $sql="SELECT * FROM $d[tb] WHERE id IN (SELECT id FROM $d[tb] $d[conds]) $d[cond1] $d[cond] $d[sortir] LIMIT $d[offset], $d[limit]";
+$out=$this->sql('r','Table',$sql);
+echo json_encode($out);
 // echo $sql;
-// if(isset($d['isColumn']) && $d['isColumn']==2){$sql = "SHOW TABLES FROM dev";}
-if($d['isColumn']==2){$sql = "SHOW TABLES FROM dev";};
-  $out=$this->sql('r','Table',$sql);
-  echo json_encode($out);
-  // echo json_encode($d['isColumn']);
-
-  // echo $sql;
-  }
-
-
-  public function tableP(){
-  $d=$this->conf;
-  $token=$d['token'];
-
+}
+public function tableP(){
+$d=$this->conf;
+$token=$d['token'];
   // $token='d0b1f13ad979d7f80d80a8262da18273'; // sa
   // $token='a456a64c4a8c268c56dab20992b993a5'; // mudi
   // $token='7cdb77d6db1d0bf7bd1a6d9ab0a26760'; // otong
   // $token='fefdc13953230427867c9b18438be828'; // barkah
-
-
   $conn=$this->connect();
   $sql="select id,email,(select id from master_akses where nama = a.akses ) as akses from master_users a where token='$token' ";
-
   $result = $conn->query($sql);
   $result->setFetchMode(PDO::FETCH_ASSOC);
   $row = $result->fetch();
-
   $nama=$row['email'];
   $akses=$row['akses'];
   $induk=$row['id'];
-
   $sql="
   select id from (select * from master_akses order by induk, id) a,
           (select @pv := '$akses') b
@@ -373,7 +328,6 @@ if($d['isColumn']==2){$sql = "SHOW TABLES FROM dev";};
   $id= implode(",",$data);
 
   if($id){
-
       $sql="
       select id, akses from master_users where akses in (select nama from master_akses where id in ($id));
       ";

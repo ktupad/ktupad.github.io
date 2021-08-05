@@ -11,27 +11,10 @@
 --yellow: yellow;
 }
 
-body {
-font-size:16px;
-/* background-color: #EEEEEE; */
-/* background-repeat: no-repeat; */
-/* background-attachment: fixed; */
-/* background-position: center; */
-/* width: 100%; */
-margin:0 auto;
-color: #000;
-padding: 60px 10px 10px 10px;
-font-family: "FontAwesome";
+.barangimg{
+  max-width:86px;
 }
 
-
-.sosmed ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; }
-.sosmed li {float: left; }
-
-video {
-  width: 100%;
-  height: auto;
-}
 
 .red{background-color: var(--red); }
 .green{background-color: var(--green); }
@@ -73,7 +56,18 @@ video {
 }
 
 
-
+body {
+font-size:16px;
+background-color: #EEEEEE;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+width: 100%;
+margin:0 auto;
+color: #000;
+padding: 60px 10px 10px 10px;
+font-family: "FontAwesome";
+}
 
 /* table */
 .table { overflow: auto; }
@@ -123,8 +117,6 @@ z-index: 1;
 }
 /* .btn-float i {padding: 0px; } */
 .btn-small {padding:5px 15px;  }
-.btn-large {padding:25px 25px; float:none; position:relative;; margin:auto; }
-
 
 .floating {
 animation-name: floating;
@@ -313,59 +305,6 @@ right: 0;
 .gallery .desc { padding: 15px; text-align: center; }
 
 
-/* ico */
-/* .ico,
-[class^="ico-"],
-[class*=" ico-"]{font:normal 1em/1 Arial, sans-serif; display:inline-block; font-size:1.5em;
- background-size: 100% 100%; padding:14px 16px; float:left; display:block; text-decoration:none;
-} */
-/* editor */
-/*
-.ico-bold:before{ content:"\0042"; }
-.ico-italic:before{ content:"\0049"; }
-.ico-link:before{ content:"\26AD"; }
-.ico-images:before{ content:"\263A"; }
-
-
-
-
-.ico-scan{ background-image: url("../images/icons/scan.svg"); }
-.ico-scan2{ background-image: url("../images/icons/scan2.svg"); }
-.ico-cetak{ background-image: url("../images/icons/print.svg"); }
-.ico-home{ background-image: url("../images/icons/home.svg"); }
-.ico-home:before{ content:"\1F3E0"; }
-.ico-home:before{ content:"\2617"; }
-.ico-kd{ background-image: url("../images/icons/kd.svg"); }
-.ico-tridot:before{ content: "\22EE"; }
-.ico-envelope:before{ content: "\2709"; }
-.ico-close:before{ content:"\2716"; }
-.ico-burger:before{ content:"\2630"; }
-.ico-pencil:before{ content:"\270E"; }
-.ico-info:before{ content:"\24D8"; }
-.ico-filter:before{ content:"\2692"; }
-.ico-gear:before{ content:"\2699"; }
-.ico-bag:before{ content: "\26C9"; }
-.ico-user:before{ content:"\1F466"; }
-.ico-bell:before{ content:"\1f514"; }
-.ico-bell2:before{ content:"\2660"; }
-.ico-out:before{ content:"\1f4e4"; }
-.ico-find:before{ content:"\1F50D"; }
-.ico-back:before{ content:"\2190"; }
-.ico-forward:before{ content:"\2192"; }
-.ico-plus:before{ content:"\271A"; }
-.ico-print:before{ content:"\1F5B6"; }
-.ico-outbox:before{ content:"\1F4E4"; }
-.ico-inbox:before{ content:"\1F4E5"; }
-.ico-check:before{ content:"\2714"; }
-.ico-fdd:before{ content:"\1F5AB"; }
-.ico-chart:before{ content:"\1F4CA"; }
-.ico-folder:before{ content:"\1F5BF"; }
-.ico-man:before{ content:"\1F464"; }
-.ico-dollar:before{ content:"\00024"; }
-.ico-confirm:before{ content:"\02713"; }
-.ico-envelope:before{ content:"\02709"; }
- */
-
 
 .center { margin: auto; text-align: center; }
 .left{float: left; }
@@ -405,7 +344,7 @@ background: #CCD1D9;
 }
 
 /* div */
-.depan {z-index: 5; background:rgb(0, 0, 0); background:rgba(0, 0, 0, 0.4); height:100%; width:100%; position:fixed; top:0; left:0; overflow:auto; }
+.depan { background:rgb(0, 0, 0); background:rgba(0, 0, 0, 0.4); height:100%; width:100%; position:fixed; top:0; left:0; overflow:auto; }
 .modal-bts:focus .modal-contents {display: block; }
 input:focus .depan { display: block; }
 

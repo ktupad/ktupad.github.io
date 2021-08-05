@@ -1,0 +1,10 @@
+:root {
+--pColor:     #00738e;
+--pLightColor:#4da2be;
+--pDarkColor: #004761;
+--pTextColor: #ffffff;
+}
+
+.barangimg{
+  max-width:86px;
+}

@@ -1,0 +1,57 @@
+.orange{color:#FFA500;}
+
+
+.barangimg{
+  max-width:86px;
+}
+
+.sosmed a{
+  /* background:purple; */
+  width: 550px;
+  float: left;
+}
+
+.sosmed ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; }
+.sosmed li {float: left; }
+
+.gading{background: #F2F3EB;}
+
+#blog-footer{ padding: 20px 0px; color: #ffffff;
+border-top: 5px solid black;
+}
+
+#blog-judul{ border-bottom: 15px solid #F4F4F4; background: #D5EAF5;}
+#blog-body,#blog-side{ background: #ffffff;}
+
+.judul{ font-size: 2em;}
+.judul2 { font-size: 3em; line-height: 1em;}
+.artikel{
+padding: 20px 30px;
+font: normal 12px Georgia, "Times New Roman", Times, serif;
+color: #000000;
+line-height: 1.8em;
+margin: 0;
+}
+  a { display: block;   text-decoration: none;}
+  #blog-header{   font-size: 2em;  padding: 20px 0px; color: white;}
+
+
+#blog-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+#blog-menu li { float: left;}
+#blog-menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+#blog-menu li a:hover { background-image: linear-gradient(#353535, black);}
+
+.kiri{float: left;}
+.kanan{float:right;right: 0;}

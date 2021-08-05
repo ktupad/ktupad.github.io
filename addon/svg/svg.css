@@ -1,4 +1,3 @@
-.hide{ display:none; }
 
 .container{
 display:inline-block;
@@ -10,27 +9,6 @@ text-align: center;
 background: green;
 }
 
-.svgIco-black {
-  display:inline-block;
-  height: 50px;
-  width: 50px;
-  padding: 10px 10px;
-  min-width: 40px;
-  fill:black;
-}
-
-.svgIco {
-display:inline-block;
-height: 50px;
-width: 50px;
-padding: 10px 10px;
-min-width: 40px;
-fill:white;
-}
-
-.svgIco:hover { fill: black;}
-.reds {fill: red;}
-.btn-close:hover{ background:red; fill:black; }
 
 .svgImg {
 width:  100%;
@@ -41,3 +19,37 @@ min-width: 150px;
 fill: black;
 }
 .svgImg:hover{ fill: blue; }
+
+.svgIco {
+display:inline-block;
+height: 50px;
+width: 50px;
+padding: 10px 10px;
+min-width: 40px;
+fill:white;
+}
+
+.svgSmall {
+  height: 30px;
+  width: 30px;
+  padding: 5px 5px;
+  min-width: 30px;
+  fill:white;
+  float:right;
+ }
+
+.svgMax {
+  width:  100%;
+  height: auto;
+  max-width: 144px;
+  fill:black;
+}
+
+.svgIco:hover { fill: black;}
+.svgRed {fill: red;}
+.svgBlack { fill:black; }
+.svgGreen { fill:green; }
+.svgBlue { fill:blue; }
+.hide{ display:none; }
+
+.btn-close:hover{ background:red; fill:black; }

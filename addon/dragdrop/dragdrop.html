@@ -1,0 +1,22 @@
+<!-- (A) LOAD CSS + JS -->
+<link rel="stylesheet" href="dragdrop.css"/>
+<script src="dragdrop.js"></script>
+<button onclick="dragdrop.addinput('text')">Input</button>
+<button onclick="dragdrop.addinput('number')">Number</button>
+<button onclick="dragdrop.addinput('checkbox')">Checkbox</button>
+<button onclick="dragdrop.addinput('radio')">Radio</button>
+<button onclick="dragdrop.addbutton()">Button</button>
+<button onclick="dragdrop.addparagraf()">Textarea</button>
+<button onclick="dragdrop.adddropdown()">Dropdown</button>
+
+<!-- (B) THE LIST -->
+<ul id="sortlist"></ul>
+
+<!-- (C) INIT ON PAGE LOAD -->
+<script>
+window.addEventListener("DOMContentLoaded", function(){
+
+  dragdrop.addlist();
+  dragdrop.slist("sortlist");
+});
+</script>

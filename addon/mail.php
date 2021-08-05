@@ -1,12 +1,9 @@
 <?php
-
 require 'phpmailer/PHPMailerAutoload.php';
-// $enc = "register@sismadi.com";
-$email = "yourmail@gmail.com";
-$password = "yourpassword";
-$to_id = "wawan@ktupad.com";
-// $message = "Aktifkan akun ada dengan klik halaman berikut <a href='https://sikaf.aset.co/?menu=aktifasi&id=$enc' > aktifasi </a>";
-  $message = "Aktifkan akun ada dengan klik halaman berikut <a href='http://localhost/lite/?c=pengguna/verifikasi/$enc' > aktifasi </a>";
+$email = "regkaf@sismadi.com";
+$password = "regkaf123";
+$to_id = "pay@dia.web.id";
+$message = "Aktifkan akun ada dengan klik halaman berikut <a href='https://sikaf.aset.co/?menu=aktifasi&id=$enc' > aktifasi </a>";
 $subject = "Pendafatran Akun Kuttab Al Fatih";
 
 $mail = new PHPMailer;
@@ -17,8 +14,8 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = $email;
 $mail->Password = $password;
-$mail->setFrom('register@sismadi.com', 'Registrasi App Sismadi');
-$mail->addReplyTo('register@sismadi.com', 'Registrasi App Sismadi');
+$mail->setFrom('regkaf@sikaf.aset.co', 'Pendaftaran Kutab Al-Fatih');
+$mail->addReplyTo('regkaf@sikaf.aset.co', 'Pendaftaran Kutab Al-Fatih');
 $mail->addAddress($to_id);
 $mail->Subject = $subject;
 $mail->msgHTML($message);

@@ -1,17 +1,27 @@
+document.title="Ktupad v3";
+ktupad.isSignup='hide';
+ktupad.isDb=1;
+ktupad.akses=['c','r','u','d'];
+ktupad.dataApp.host='http://localhost/neo/';
+ktupad.dataApp.model='database.php';
 
-var app=2;
-var host='https://ktupad.com/';
-var model='https://ktupad.com/api/';
-if(app==2){
-  host='http://localhost/new/';
-  model='http://localhost/new/api2/';
-}
+// ktupad.home='modules/master/login/controller.js?login/login';
+ktupad.home='modules/apps/blog/controller.js?blog/homeGet';
+// ktupad.afterlogin='modules/master/data/controller.js?data/view';
+ktupad.afterlogin='modules/apps/home/controller.js?home/view';
+// ktupad.afterlogin='modules/master/param/controller.js?param/view';
+// ktupad.afterlogin='modules/apps/antrian/controller.js?antrian/view';
 
-conf.dataApp.host=host;
-conf.dataApp.model=model;
+ktupad.loadView("system/index.html","myTemplate",function(){
+// http://localhost/neo/?path=modules/apps/blog/controller.js?blog/blogDeyailGet/15
+// http://localhost/neo/?path=modules/apps/barang/controller.js?barang/homeGet
 
-conf.isSignup='hide';
-conf.isDb=1;
-conf.akses=['c','r','u','d'];
-conf.getAppData();
-// conf.open('atas');
+app=ktupad.getURL('app');
+if(app){
+  c1='modules/apps/'+app+'/controller.js?'+app+'/homeGet';
+  ktupad.loadController(c1);}
+
+// path=ktupad.getURL('path');
+// if(path){ktupad.loadController(path);}
+else{ ktupad.loadController(ktupad.home); }
+});
