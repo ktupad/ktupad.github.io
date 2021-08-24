@@ -10,15 +10,6 @@ background: green;
 }
 
 
-.svgImg {
-width:  100%;
-height: auto;
-padding: 50px 50px;
-max-width: 200px;
-min-width: 150px;
-fill: black;
-}
-.svgImg:hover{ fill: blue; }
 
 .svgIco {
 display:inline-block;
@@ -37,6 +28,17 @@ fill:white;
   fill:white;
   float:right;
  }
+
+ .svgImg {
+ width:  100%;
+ height: auto;
+ padding: 50px 50px;
+ max-width: 200px;
+ min-width: 150px;
+ fill: black;
+ }
+
+ .svgImg:hover{ fill: blue; }
 
 .svgMax {
   width:  100%;

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://ktupad.com/?blog=15</loc>
+    <lastmod>2021-08-05T13:47:14+00:00</lastmod>
+    <news:news>
+    <news:publication>
+      <news:name>BBcode</news:name>
+      <news:language>id</news:language>
+    </news:publication>
+    <news:publication_date>2021-08-05T13:47:14+00:00</news:publication_date>
+      <news:title>BBCode plugin untuk ktupad MVC Framework</news:title>
+    </news:news>
+  </url>
+</urlset>

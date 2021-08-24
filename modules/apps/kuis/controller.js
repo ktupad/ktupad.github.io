@@ -9,8 +9,8 @@ rpp:1,
 controller:'modules/apps/kuis/controller.js?',
 
 view:function(){
-  document.getElementById('blog-judul').innerHTML = '<div class = "row artikel"><span class = "judul2">Admin</span></div>';
-  k[x].table.id='blog-body';
+  // document.getElementById('blog-judul').innerHTML = '<div class = "row artikel"><span class = "judul2">Admin</span></div>';
+  // k[x].table.id='blog-body';
 
 k[x].ajax.path=this.url.path;
 k[x].crud.table();

@@ -1,7 +1,7 @@
 <?php
 require 'phpmailer/PHPMailerAutoload.php';
-$email = "regkaf@sismadi.com";
-$password = "regkaf123";
+$email = "surel@gamil.com";
+$password = "sandi";
 $to_id = "pay@dia.web.id";
 $message = "Aktifkan akun ada dengan klik halaman berikut <a href='https://sikaf.aset.co/?menu=aktifasi&id=$enc' > aktifasi </a>";
 $subject = "Pendafatran Akun Kuttab Al Fatih";

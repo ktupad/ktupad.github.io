@@ -10,11 +10,38 @@ controller:'modules/apps/blog/controller.js?',
 init:function(){
 k[x].ajax.path=this.url.path;
 },
-view:function(){
-  document.getElementById('blog-judul').innerHTML = '<div class = "row artikel"><span class = "judul2">Admin</span></div>';
-  k[x].table.id='blog-body';
 
-// k[x].ajax.path=this.url.path;
+
+sosmed:function() {
+
+var  arr = [
+{url:"https://www.facebook.com/share.php?u=",ikon:"facebook"},
+{url:"https://twitter.com/intent/tweet?url=",ikon:"twitter"},
+{url:"https://api.whatsapp.com/send?text=",ikon:"whatsapp"},
+];
+out = '<ul>';
+for (var i in arr) {
+  out += '<li><i class = "svgIco" onclick = "k.blog.app.gourl(\''+arr[i].url+'\')">'+svg.ico(arr[i].ikon)+'</i></li>';
+  // out += '<li><i class = "svgIco" onclick = "window.open(\''+arr[i].url+'\')">'+svg.ico(arr[i].ikon)+'</i></li>';
+}
+out+= '</ul>';
+return out;
+},
+
+gourl:function(url) {
+  url1='https://ktupad.com?blog='+ktupad.blogId;
+  window.open(url+url1);
+  // window.open('https://api.whatsapp.com/send?text');
+},
+
+
+
+
+view:function(){
+  // document.getElementById('blog-judul').innerHTML = '<div class = "row artikel"><span class = "judul2">Admin</span></div>';
+  // k[x].table.id='blog-body';
+
+k[x].ajax.path=this.url.path;
 k[x].crud.table();
 },
 
@@ -75,9 +102,11 @@ for (var i in arr) {
   out += '</div>';
 }
 document.getElementById('blog-body').innerHTML = out;
+
 },
 
 blogDetailGet:function(id){
+ktupad.blogId=id;
 m=ktupad.loadControllerData;
 if(m[2]){id=m[2]};
 data = {path:this.url.path,mod:'blogDetailGet',id:id};
@@ -110,18 +139,26 @@ homeView:function() {
 document.getElementById('content').innerHTML = document.getElementById('view-blog').innerHTML;
 out = '<ul>';
 out += '<li><a  href="#" onclick = "k[x].app.blogHomeGet(25)">Home</a></li>';
-out += '<li><a  href="#" onclick = "k[x].app.blogGet(\'modules\')">Modules</a></li>';
-out += '<li><a  href="#" onclick = "k[x].app.blogGet(\'addons\')">Addons</a></li>';
-// out += '<li><a  href="#" onclick = "k[x].app.blogGet(4)">About</a></li>';
-out += '<li style="float:right"><a  href="#" onclick = "k[x].app.managerGet()">Chart</a></li>';
-out += '<li style="float:right"><a  href="#" onclick = "k[x].app.view()">Admin</a></li>';
+out += '<li><a  href="#" onclick = "k[x].app.blogGet(\'Modules\')">Modules</a></li>';
+out += '<li><a  href="#" onclick = "k[x].app.blogGet(\'Addons\')">Addons</a></li>';
+out += '<li><a  href="#" onclick = "k[x].app.blogDetailGet(36)">Download</a></li>';
+// out += '<li><a  href="#" onclick = "k[x].app.blogDetailGet(4)">About</a></li>';
+// out += '<li style="float:right"><a  href="#" onclick = "k[x].app.managerGet()">Chart</a></li>';
+// out += '<li style="float:right"><a  href="#" onclick = "k[x].app.view()">Admin</a></li>';
 out += '</ul>';
 document.getElementById('blog-menu').innerHTML = out;
 document.getElementById('blog-back').innerHTML = svg.ico('return');
 
+document.getElementById('sosmed').innerHTML = this.sosmed();
+
+
+
 blog=ktupad.getURL('blog');
 if(blog){ this.blogDetailGet(blog);}
-else{ this.blogHomeGet(25);}
+else{
+  ktupad.blogId=25;
+  this.blogHomeGet(ktupad.blogId);
+}
 
 
 },
